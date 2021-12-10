@@ -1,0 +1,128 @@
+{
+    "workflowApiVersion": "1.1",
+    "metaData": {
+       "icon": "images/iconSmall.png",
+       "category": "message"
+    },
+    "type": "REST",
+    "lang": {
+       "en-US": {
+           "name": "Twilio SMS",
+           "description": "Send Twilio SMS with Journey Builder",
+           "TwilioMessage":"test"
+       }
+    },
+    "arguments": {
+        "execute": {
+            "inArguments": [
+                {
+                  "email": "{{Contact.Default.EmailAddress}}",
+                  "to": "{{Contact.Attribute.TwilioNumbers.TwilioNumber}}"
+                }               
+            ],
+            "outArguments": [],
+            "url": "https://twilio-custom-jb-nuage.herokuapp.com/journeybuilder/execute",
+            "method": "POST",
+            "body": "",
+            "format": "json",
+            "useJwt": false,
+            "timeout": 2000
+        }
+    },
+    "configurationArguments": {
+      "applicationExtensionKey": "febedc0b-e4a6-43dd-bf86-9f7f49c3c386",
+       "save": {
+           "url": "https://twilio-custom-jb-nuage.herokuapp.com/save",
+            "method": "POST",
+            "body": "",
+            "format": "json",
+            "useJwt": false,
+            "timeout": 2000
+       },
+       "publish": {
+           "url": "https://twilio-custom-jb-nuage.herokuapp.com/publish",
+            "method": "POST",
+            "body": "",
+            "format": "json",
+            "useJwt": false,
+            "timeout": 2000
+       },
+       "validate": {
+           "url": "https://twilio-custom-jb-nuage.herokuapp.com/validate",
+            "method": "POST",
+            "body": "",
+            "format": "json",
+            "useJwt": false,
+            "timeout": 2000
+       },
+       "stop": {
+           "url": "https://twilio-custom-jb-nuage.herokuapp.com/stop",
+            "method": "POST",
+            "body": "",
+            "format": "json",
+            "useJwt": false,
+            "timeout": 2000
+       }
+    },
+    "wizardSteps": [
+       { "label": "Create SMS Message", "key": "step1" }
+    ],
+    "userInterfaces": {
+       "configModal": {
+           "height": 600,
+           "width": 800,
+           "fullscreen": false
+       }
+    },
+    "schema": {
+        "arguments": {
+            "execute": {
+                "inArguments": [
+                    {
+                        "accountSid": {
+                            "dataType": "String",
+                            "isNullable": false,
+                            "direction": "out"   
+                        }
+                    },                    
+                    {
+                        "authToken": {
+                            "dataType": "String",
+                            "isNullable": false,
+                            "direction": "out"   
+                        }
+                    },                    
+                    {
+                        "from": {
+                            "dataType": "Phone",
+                            "isNullable": true,
+                            "direction": "out"   
+                        }
+                    },                    
+                    {
+                        "to": {
+                            "dataType": "Phone",
+                            "isNullable": false,
+                            "direction": "out"   
+                        }
+                    },
+                    {
+                        "body": {
+                            "dataType": "String",
+                            "isNullable": false,
+                            "direction": "out"   
+                        }
+                    },                    
+                    {
+                        "email": {
+                            "dataType": "Email",
+                            "isNullable": true,
+                            "direction": "out"
+                        }
+                    }
+                ],
+                "outArguments": []
+            }
+        }
+    }
+}
