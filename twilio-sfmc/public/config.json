@@ -30,7 +30,7 @@
         }
     },
     "configurationArguments": {
-      "applicationExtensionKey": "febedc0b-e4a6-43dd-bf86-9f7f49c3c386",
+      "applicationExtensionKey": "xxx-xxx-xxx-xxx-xxx",
        "save": {
            "url": "https://twilio-custom-jb-nuage.herokuapp.com/save",
             "method": "POST",
